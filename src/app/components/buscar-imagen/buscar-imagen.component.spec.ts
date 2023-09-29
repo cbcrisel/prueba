@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BuscarImagenComponent } from './buscar-imagen.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('BuscarImagenComponent', () => {
   let component: BuscarImagenComponent;
@@ -9,7 +10,7 @@ describe('BuscarImagenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports:[HttpClientModule,FormsModule],
       declarations: [BuscarImagenComponent],
     }).compileComponents();
   });

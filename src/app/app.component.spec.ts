@@ -1,12 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ErrorComponent } from './shared/error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BuscarImagenComponent } from './components/buscar-imagen/buscar-imagen.component';
+import { ListarImagenComponent } from './components/listar-imagen/listar-imagen.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[NavbarComponent],
-      declarations: [AppComponent],
+      imports:[HttpClientModule,FormsModule],
+      declarations: [AppComponent,NavbarComponent,ErrorComponent,BuscarImagenComponent,ListarImagenComponent],
     }).compileComponents();
   });
 
@@ -20,14 +25,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('pixabay');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'pixabay app is running!'
-    );
   });
 });
