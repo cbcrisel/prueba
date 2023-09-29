@@ -15,4 +15,4 @@ RUN npm run build --prod
 
 FROM nginx
 
-COPY --from=node usr/src/app/dist/pixabay /usr/share/nginx/html 
+COPY --from=node usr/src/app/dist/jenkinsprueba /usr/share/nginx/html 
